@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product of Array Except Self</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Product of Array Except Self</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <form method="POST">
+                <div class="form-group">
+                    <label for="input">Input:</label>
+                    <input type="text" class="form-control" id="input" name="input" placeholder="Enter a comma-separated list of integers" value="{{ request.form['input'] }}" required>
+                </div>
+                <!-- 用于显示计算结果 -->
+                {% if result %}
+                <div class="form-group">
+                    <label for="result">Result:</label>
+                    <p class="form-control-static">{{ result }}</p>
+                </div>
+                {% endif %}
+                <!-- 用于显示错误消息 -->
+                {% if error %}
+                <div class="form-group">
+                    <p class="text-danger">{{ error }}</p>
+                </div>
+                {% endif %}
+
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
